@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>neat-little-uploader (v1.00) example</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/neat-little-uploader.css">
+
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/neat-little-uploader.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>neat-little-uploader (v1.00) example</h2>
+		<hr>
+		<div class="row">
+			<div class="col-md-5">
+				<form role="form">
+					<div class="form-group" class="col-sm-3">
+						<label for="edit-item-file filedrag-filename" class="control-label">Upload File</label>
+						<div>
+							<div class="filedrag">
+								<div class="filedrag-droparea">
+									<div class="filedrag-display-filename"></div>
+									<div class="filedrag-remove-button">(<button type="button" class="btn btn-xs btn-link filedrag-remove-file">remove</button>)</div>
+								</div>
+								<div class="filedrag-progress"></div>
+								<input type="file" class="filedrag-input" id="edit-file-input" name="edit-file-input">
+								<input class="filedrag-input" type="hidden" name="hid-edit-original-filename" id="hid-edit-original-filename">
+								<input class="filedrag-input" type="hidden" name="hid-edit-new-filename" id="hid-edit-new-filename">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function displayMessage(response) {
+			if(response.success == 1) {
+				alert(response.original_filename + "\n...uploaded successfully! \n\nNew filename:\n" + response.new_filename);
+			}
+			else { alert("Error uploading file"); }
+		}
+
+		initUploaders('example_post_handler.php', 'displayMessage');
+	</script>
+</body>
+</html>
