@@ -85,7 +85,7 @@ Configuration Options
 
 *...are fairly limited at this point.*
 
-You can wire in a custom callback, to be called once the image has successfully uploaded, an example of which can be found in the included example. It looks like this:
+You can wire in a custom callback, to be called once the file has been successfully uploaded, an example of which can be found in the included example. It looks like this:
 
 ```javascript
 //Custom callback example
@@ -102,7 +102,7 @@ $(function () {
 License
 -------
 
-Dinkly is open-sourced software licensed under the MIT License.
+neat-little-uploader is open-sourced software licensed under the MIT License.
 
 
 Contact
