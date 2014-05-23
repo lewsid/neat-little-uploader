@@ -102,7 +102,7 @@ $(function () {
 License
 -------
 
-Dinkly is open-sourced software licensed under the MIT License.
+neat-little-uploader is open-sourced software licensed under the MIT License.
 
 
 Contact
