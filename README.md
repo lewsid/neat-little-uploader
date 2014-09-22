@@ -3,7 +3,7 @@ neat-little-uploader (v1.00)
 
 A neat little drag and drop uploader.
 
-A minimalistic HTML5 drag-and-drop file uploader for use with JQuery. 
+A minimalistic HTML5 drag-and-drop file uploader for use with JQuery and Bootstrap 3. 
 
 [This is what it looks like.](https://raw.github.com/lewsid/neat-little-uploader/master/img/example.png)
 
@@ -18,6 +18,8 @@ Installation
 3. Insert the following lines into the header:
 
     ```html
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/neat-little-uploader.css">
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/js/neat-little-uploader.js"></script>
