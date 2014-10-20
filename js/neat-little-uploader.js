@@ -76,7 +76,7 @@ function uploadFile(file, post_target, input_id, onComplete) {
 
 	//Start the upload
 	xhr.open("POST", post_target + "/filetype/" + file.type.replace("image/", ""), true);
-	xhr.setRequestHeader("X_FILENAME", file.name);
+	xhr.setRequestHeader("X-FILENAME", file.name);
 	xhr.send(file);
 }
 
