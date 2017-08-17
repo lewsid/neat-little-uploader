@@ -32,8 +32,8 @@ Installation
       </div>
       <div class="filedrag-progress"></div>
         <input type="file" class="filedrag-input" id="edit-file-input" name="edit-file-input">
-        <input class="filedrag-input" type="hidden" name="hid-edit-original-filename" id="hid-edit-original-filename">
-        <input class="filedrag-input" type="hidden" name="hid-edit-new-filename" id="hid-edit-new-filename">
+        <input type="hidden" name="hid-original-filename" id="hid-original-filename">
+        <input type="hidden" name="hid-new-filename" id="hid-new-filename">
       </div>
     </div>
     ```
