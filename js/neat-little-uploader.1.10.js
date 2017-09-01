@@ -29,7 +29,7 @@ function parseFile(div_id, file, callback) {
 	}
 	reader.readAsDataURL(file);
 
-	window[callback];
+	if(callback) { window[callback]; }
 }
 
 function uploadFile(div_id, file, post_target, input_id, onComplete) {
