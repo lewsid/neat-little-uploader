@@ -27,6 +27,14 @@
 	max-width: 100%;
 }
 
+.filedrag-preview-container
+{
+	border-style: solid;
+	border-width: 1px;
+	margin-bottom: 15px;
+	border-color: gray;
+}
+
 .filedrag-progress p
 {
 	display: block;
