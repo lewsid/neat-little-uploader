@@ -69,8 +69,8 @@ function uploadFile(div_id, file, post_target, input_id, onComplete) {
 				$target_div.find('.filedrag-remove-button').show();
 				$target_div.find('.filedrag-droparea').addClass('has-file');
 
-				$target_div.find('.hidden-original').val(response.new_filename);
-				$target_div.find('.hidden-new').val(response.original_filename);
+				$target_div.find('.hidden-original').val(response.original_filename);
+				$target_div.find('.hidden-new').val(response.new_filename);
 
 				if(onComplete) { window[onComplete](response); }
 			}
