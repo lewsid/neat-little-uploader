@@ -1,9 +1,9 @@
-neat-little-uploader (v1.00)
+neat-little-uploader (v1.10)
 ============================
 
 A neat little drag and drop uploader.
 
-A minimalistic HTML5 drag-and-drop file uploader for use with JQuery. 
+A minimalistic HTML5 drag-and-drop file uploader (with image preview) for use with JQuery. 
 
 [This is what it looks like.](https://raw.github.com/lewsid/neat-little-uploader/master/img/example.png)
 
@@ -19,21 +19,27 @@ Installation
 
     ```html
     <link rel="stylesheet" href="/css/neat-little-uploader.css">
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="/js/neat-little-uploader.js"></script>
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/neat-little-uploader.js?v=110"></script>
     ```
 4. Place the following code where you'd like the uploader interface to appear on your page:
 
     ```html
-    <div class="filedrag">
-      <div class="filedrag-droparea">
-        <div class="filedrag-display-filename"></div>
-        <div class="filedrag-remove-button">(<button type="button" class="btn btn-xs btn-link filedrag-remove-file">remove</button>)</div>
-      </div>
-      <div class="filedrag-progress"></div>
-        <input type="file" class="filedrag-input" id="edit-file-input" name="edit-file-input">
-        <input type="hidden" name="hid-original-filename" id="hid-original-filename">
-        <input type="hidden" name="hid-new-filename" id="hid-new-filename">
+    <div class="form-group" class="col-sm-3">
+      <label for="edit-item-file filedrag-filename" class="control-label">Upload File</label>
+      <div class="filedrag neat-little-uploader" id="example-1">
+        <div class="filedrag-preview-container" style="display: none;">
+          <img src="" class="filedrag-preview">
+        </div>
+        <div class="filedrag-droparea">
+          <div class="filedrag-display-filename"></div>
+          <div class="filedrag-remove-button">(<button type="button" class="btn btn-xs btn-link filedrag-remove-file">remove</button>)</div>
+        </div>
+        <div class="filedrag-progress"></div>
+        <input type="file" class="filedrag-input" id="file-input" name="file-input">
+        <input class="filedrag-input hidden-original" type="hidden" name="original_filename_1" id="hid-original-filename-1">
+        <input class="filedrag-input hidden-new" type="hidden" name="new_filename_1" id="hid-new-filename-1">
       </div>
     </div>
     ```
@@ -42,7 +48,7 @@ Installation
 
     ```javascript
     $(function () {
-      initUploaders('post_handler.php');
+      initUploader('example-1', 'example_post_handler.php');
     });
     ```
     
@@ -94,7 +100,7 @@ function responseCallback(response) {
 }
 
 $(function () {
-  initUploaders('post_handler.php', 'responseCallback');
+  initUploader('example-1', 'example_post_handler.php', 'responseCallback');
 });
 ```
 
