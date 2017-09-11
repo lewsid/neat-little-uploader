@@ -18,7 +18,7 @@ Installation
 3. Insert the following lines into the header:
 
     ```html
-    <link rel="stylesheet" href="/css/neat-little-uploader.css">
+    <link rel="stylesheet" href="/css/neat-little-uploader.1.10.css">
     <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/neat-little-uploader.1.10.js"></script>
