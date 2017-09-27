@@ -87,15 +87,27 @@ function uploadFile(div_id, file, post_target, input_id, onComplete) {
 	xhr.send(file);
 }
 
-function initUploader(div_id, post_target, onComplete) {
+function initUploader(div_id, post_target, onComplete, unique_filename, original_filename, file_path) {
 	var xhr = new XMLHttpRequest();
+	$target_div = $('#'+div_id);
 
-	resetUploader(div_id);
+	if(unique_filename && original_filename) {
+		$target_div.find('.file-input').val(unique_filename);				
+		$target_div.find('.filedrag-display-filename').html(original_filename);
+		$target_div.find('.filedrag-remove-button').show();
+		$target_div.find('.filedrag-droparea').addClass('has-file');
+		$target_div.find('.hidden-original').val(original_filename);
+		$target_div.find('.hidden-new').val(unique_filename);
+		$target_div.find('.filedrag-preview').attr('src', file_path + unique_filename);
+		$target_div.find('.filedrag-filename').html(original_filename);
+		$target_div.find('.filedrag-preview-container').show();
+	}
+	else {
+		resetUploader(div_id);
+	}
 
 	//Only do this stuff if the technology is supported
 	if(xhr.upload) {
-		$target_div = $('#'+div_id);
-
 		//Handle the dragover event
 		$target_div.find('.filedrag-droparea').on("dragover", function(e) {
 			e.stopPropagation();

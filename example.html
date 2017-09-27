@@ -3,14 +3,14 @@
 	<head>
 		<title>neat-little-uploader (v1.10) example</title>
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/css/neat-little-uploader.1.10.css">
+		<link rel="stylesheet" href="/css/neat-little-uploader.1.11.css">
 		<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
 		<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script src="/js/neat-little-uploader.1.10.js"></script>
+		<script src="/js/neat-little-uploader.1.11.js"></script>
 	</head>
 	<body>
 		<div class="container">
-			<h2>neat-little-uploader (v1.10) example</h2>
+			<h2>neat-little-uploader (v1.11) example</h2>
 			<hr>
 			<div class="row">
 				<div class="col-md-5">
@@ -41,8 +41,8 @@
 								<div class="filedrag-progress"></div>
 								<input type="file" class="filedrag-input" id="file-input" name="file-input">
 								<!-- Keep these class names intact, but name the inputs whatever you like -->
+								<!-- Once uploaded, the original file name with be set here -->
 								<input class="filedrag-input hidden-original" type="hidden" name="original_filename_1" id="hid-original-filename-1">
-								<input class="filedrag-input hidden-new" type="hidden" name="new_filename_1" id="hid-new-filename-1">
 							</div>
 						</div>
 						<hr>
@@ -50,16 +50,21 @@
 							<label for="edit-item-file filedrag-filename" class="control-label">Upload Another File</label>
 							<div>
 								<div class="filedrag neat-little-uploader" id="example-2">
-									<!-- <div class="filedrag-preview-container" style="display: none;">
+									<!-- Comment out .filedrag-preview-container div to remove the preview for use with non-image files -->
+									<div class="filedrag-preview-container" style="display: none;">
 										<img src="" class="filedrag-preview">
-									</div> -->
+									</div>
 									<div class="filedrag-droparea">
 										<div class="filedrag-display-filename"></div>
 										<div class="filedrag-remove-button">(<button type="button" class="btn btn-xs btn-link filedrag-remove-file">remove</button>)</div>
 									</div>
 									<div class="filedrag-progress"></div>
 									<input type="file" class="filedrag-input" id="file-input" name="file-input">
+									
+									<!-- Once uploaded, the original file name with be set here -->
 									<input class="filedrag-input hidden-original" type="hidden" name="original_filename_2" id="hid-original-filename-2">
+
+									<!-- Once uploaded, the new unique file name with be set here -->
 									<input class="filedrag-input hidden-new" type="hidden" name="new_filename_2" id="hid-new-filename-2">
 								</div>
 							</div>
@@ -85,7 +90,9 @@
 
 				//The first parameter is the id of the div to attach the uploader to, the second is the post url, and the third is an optional callback function
 				initUploader('example-1', 'example_post_handler.php', 'displayMessage');
-				initUploader('example-2', 'example_post_handler.php', 'displayMessage');
+
+				//This example shows how to pre-load a file (in this case an image)
+				initUploader('example-2', 'example_post_handler.php', 'displayMessage', '59cbcb7723def.jpg', 'example.png', '/uploads/');
 			});
 		</script>
 	</body>

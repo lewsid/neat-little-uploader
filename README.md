@@ -1,4 +1,4 @@
-neat-little-uploader (v1.10)
+neat-little-uploader (v1.11)
 ============================
 
 A neat little drag and drop uploader.
@@ -89,7 +89,7 @@ IE10+, Firefox 4+, Safari 5+, Chrome 7+
 Configuration Options
 ---------------------
 
-*...are fairly limited at this point.*
+Examples of these options can be found in `example.html`
 
 You can wire in a custom callback, to be called once the file has been successfully uploaded, an example of which can be found in the included example. It looks like this:
 
@@ -101,6 +101,14 @@ function responseCallback(response) {
 
 $(function () {
   initUploader('example-1', 'example_post_handler.php', 'responseCallback');
+});
+```
+
+To pre-load an existing file (in this case an image):
+
+```javascript
+$(function () {
+  initUploader('example-1', 'example_post_handler.php', 'responseCallback', '59cbcb7723def.jpg', 'example.png', '/uploads/');
 });
 ```
 
