@@ -1,4 +1,4 @@
-neat-little-uploader (v1.11)
+neat-little-uploader (v1.12)
 ============================
 
 A neat little drag and drop uploader.
